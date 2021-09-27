@@ -1,0 +1,35 @@
+baseurl = "https://example.com/"
+languageCode = "en-us"
+theme = "hugo-theme-fiber"
+paginate = 5
+
+[params]
+  contentTypeName = "post"
+  themeColor = "orange"
+  showMenuItems = 2
+  fullWidthTheme = false
+  centerTheme = false
+
+[languages]
+  [languages.en]
+    title = "It's a Moo Point"
+    subtitle = "Yeah, it's like a cow's opinion, you know, it just doesn't matter."
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "It's a Moo Point"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "showcase"
+        name = "Showcase"
+        url = "/showcase"
