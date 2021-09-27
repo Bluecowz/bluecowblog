@@ -1,4 +1,4 @@
-baseurl = "https://example.com/"
+baseurl = "https://bluecow.io"
 languageCode = "en-us"
 theme = "hugo-theme-fiber"
 paginate = 5
@@ -34,6 +34,6 @@ paginate = 5
         name = "Showcase"
         url = "/showcase"
       [[languages.en.menu.main]]
-        identifier = "booklist"
-        name = "Books"
-        url = "/booklist"
+        identifier = "lists"
+        name = "Lists"
+        url = "/lists"
