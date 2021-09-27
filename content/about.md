@@ -1,22 +1,17 @@
 +++
 title = "About"
 date = "2021-09-27"
-author = "Radek"
+author = "Mike"
 +++
 
 # Howdy
 
-My name is Radek and I'm the author of this theme. I made it to help you present your ideas easier.
+My name is Mike. I like writing software and solving problems.
 
-We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.
+This blog is place to write down ideas. Writing things out helps me understand them and elebrorate on ideas. I was not good in English class and there will be many typos and awkard sentences.
 
-This theme is pretty basic and covers all of the essentials. All you have to do is start typing!
+Currently I am working for a Fortune 500 company but I would rather be working on my own business.
 
-The theme includes:
+I started playing World of Warcraft in 2007 and my first serious character was a Tauren Hunter. His name was Bluecow.
 
-- **5 duotone themes**, depending on your preferences (orange, red, blue, green, pink)
-- [**Fira Code**](https://github.com/tonsky/FiraCode) as default monospaced font. It's gorgeous!
-- **really nice, custom duotone** syntax highlighting based on [**PrismJS**](https://prismjs.com)
-- mobile friendly layout
-
-So, there you have it... enjoy!
+I currently reside in Alabama with my wife and two corgis, Cooper and Jaina.
