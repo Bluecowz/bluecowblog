@@ -18,5 +18,6 @@ FROM nginx:alpine
 COPY --from=build /site/public /usr/share/nginx/html
 
 EXPOSE 80
+EXPOSE 8080
 
 WORKDIR /usr/share/nginx/html
