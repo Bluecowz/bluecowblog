@@ -5,6 +5,6 @@ steps:
       [
         "build",
         "-t",
-        "gcr.io/my-project/github.com/username/project.com:$COMMIT_SHA",
+        "gcr.io/blueocwblog/github.com/bluecowz/bluecowblog.com:$COMMIT_SHA",
         "./backend",
       ]
