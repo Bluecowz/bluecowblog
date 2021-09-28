@@ -17,4 +17,6 @@ RUN hugo
 FROM nginx:alpine
 COPY --from=build /site/public /usr/share/nginx/html
 
+EXPOSE 80
+
 WORKDIR /usr/share/nginx/html
