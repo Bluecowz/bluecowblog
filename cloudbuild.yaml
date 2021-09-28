@@ -1,3 +1,10 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'gcr.io/bluecowblog/blog-service', '.' ]
+  # Build the container image
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/my-project/github.com/username/project.com:$COMMIT_SHA",
+        "./backend",
+      ]
