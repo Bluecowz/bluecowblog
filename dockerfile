@@ -1,45 +1,20 @@
-# GitHub:       https://github.com/gohugoio
-# Twitter:      https://twitter.com/gohugoio
-# Website:      https://gohugo.io/
+FROM nginx:alpine as build
 
-FROM golang:1.16-alpine AS build
+RUN apk add --update \
+    wget
+    
+ARG HUGO_VERSION="0.88.1"
+RUN wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" && \
+    tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+    rm -r hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+    mv hugo /usr/bin
 
-# Optionally set HUGO_BUILD_TAGS to "extended" or "nodeploy" when building like so:
-#   docker build --build-arg HUGO_BUILD_TAGS=extended .
-ARG HUGO_BUILD_TAGS
-
-ARG CGO=1
-ENV CGO_ENABLED=${CGO}
-ENV GOOS=linux
-ENV GO111MODULE=on
-
-WORKDIR /go/src/github.com/gohugoio/hugo
-
-COPY . /go/src/github.com/gohugoio/hugo/
-
-# gcc/g++ are required to build SASS libraries for extended version
-RUN apk update && \
-    apk add --no-cache gcc g++ musl-dev && \
-    go get github.com/magefile/mage
-
-RUN mage hugo && mage install
-
-# ---
-
-FROM alpine:3.12
-
-COPY --from=build /go/bin/hugo /usr/bin/hugo
-
-# libc6-compat & libstdc++ are required for extended SASS libraries
-# ca-certificates are required to fetch outside resources (like Twitter oEmbeds)
-RUN apk update && \
-    apk add --no-cache ca-certificates libc6-compat libstdc++ git
-
-VOLUME /site
+COPY ./ /site
 WORKDIR /site
+RUN hugo
 
-# Expose port for live server
-EXPOSE 1313
+#Copy static files to Nginx
+FROM nginx:alpine
+COPY --from=build /site/public /usr/share/nginx/html
 
-ENTRYPOINT ["hugo"]
-CMD ["--help"]
+WORKDIR /usr/share/nginx/html
