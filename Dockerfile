@@ -19,5 +19,6 @@ COPY nginx.conf /etc/nginx/
 COPY --from=build /site/public /usr/share/nginx/html
 
 EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
 
 WORKDIR /usr/share/nginx/html
