@@ -15,8 +15,9 @@ RUN hugo
 
 #Copy static files to Nginx
 FROM nginx:alpine
+COPY nginx.conf /etc/nginx/
 COPY --from=build /site/public /usr/share/nginx/html
 
-EXPOSE 1313:8080
+EXPOSE 8080
 
 WORKDIR /usr/share/nginx/html
