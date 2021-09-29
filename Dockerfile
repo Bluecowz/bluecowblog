@@ -19,8 +19,8 @@ FROM nginx:alpine
 #COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 #COPY --from=build /site/public /usr/share/nginx/html
-COPY --from=build /site/public /var/www/html
-RUN chmod -R 775 /var/www/html
+COPY --from=build /site/public /var/www
+RUN chmod -R 775 /var/www
 
 ENV PORT 8080
 ENV HOST 0.0.0.0
