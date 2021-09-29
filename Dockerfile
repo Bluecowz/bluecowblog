@@ -11,6 +11,7 @@ WORKDIR /site
 RUN hugo
 
 FROM nginx:alpine
+EXPOSE 8080
 
 COPY --from=build /site/public /var/share/nginx/html
 
