@@ -15,6 +15,7 @@ RUN hugo
 
 #Copy static files to Nginx
 FROM nginx:alpine
+RUN /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/
 COPY --from=build /site/public /usr/share/nginx/html
 
