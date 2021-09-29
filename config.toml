@@ -1,4 +1,4 @@
-baseurl = "www.bluecow.io"
+baseurl = "/"
 languageCode = "en-us"
 theme = "hugo-theme-fiber"
 paginate = 5
