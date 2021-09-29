@@ -18,8 +18,8 @@ FROM nginx:alpine
 
 #COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-#COPY --from=build /site/public /usr/share/nginx/html
-COPY --from=build /site/public /var/www/html
+COPY --from=build /site/public /usr/share/nginx/html
+#COPY --from=build /site/public /var/www/html
 
 
 ENV PORT 8080
