@@ -15,13 +15,12 @@ RUN hugo
 
 #Copy static files to Nginx
 FROM nginx:alpine
-RUN rm /etc/nginx/conf.d/default.conf
+
 COPY nginx.conf /etc/nginx/
 COPY --from=build /site/public /usr/share/nginx/html
 
 ENV PORT 8080
 ENV HOST 0.0.0.0
 EXPOSE 8080
-#CMD ["nginx", "-g", "daemon off;"]
 
 WORKDIR /usr/share/nginx/html
