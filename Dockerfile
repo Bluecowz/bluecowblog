@@ -1,4 +1,4 @@
-FROM nginx:alphine as build
+FROM nginx:alpine as build
 
 ARG HUGO_VERSION="0.88.1"
 RUN wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" && \
