@@ -9,7 +9,7 @@ draft=false
 
 ## User Login via Twitch using React
 
-I was recently working on a project where I wanted to let users login via [Twitch](https://twitch.tv). Originally, I was building the project in Django but found the framework too monolithic and it annoyed me. So I decided to move the project to React. After moving the project I spent at least two hours trying to rebuild the login process. I had done it once before and I screwed it up the second time. I'm going to write it down so when I forget again I'll be able to check. 
+I was recently working on a project where I wanted to let users login via [Twitch](https://twitch.tv). Originally, I was building the project in Django but found the framework too monolithic and it annoyed me. So I decided to move the project to React. After moving the project, I spent at least two hours trying to rebuild the login process. I had done it once before and I screwed it up the second time. I'm going to write it down so when I forget again I'll be able to check. 
 
 
 ### Register Your Application With Twitch
@@ -29,7 +29,7 @@ I'm going to select my catagory as *other* because I'm not actually doing anythi
 
 
 #### Not A Robot
-Once you are determined to not be a 011100100110111101100010011011110111010000001010 hit the create button and now you have a project. Hit 'manage' to go into your project. 
+Once you are determined to not be a 011100100110111101100010011011110111010000001010, hit the create button and now you have a project. Hit 'manage' to go into your project. 
 
 This is where you will find the **Client ID** and **Client Secret**. You will need to generate a new secret. Be sure to put it somewhere because you cannot be shown the secret again. Instead, it generates a new one and the existing secret is obsolete. This can be a pain when working across multiple computers.
 
@@ -74,7 +74,7 @@ The route for your Twitch Authorization handler should be the same as the redire
 
 ### Now Let's Handle That Code
 
-So far, the user clicks a link which bounces them over to Twitch where they can login and tell Twitch they approve of our scopes. When the user approves/logs in, Twitch will redirect them to the redirect link we gave to Twitch. This will bouce the user to our Twitch Auth URL were we can setup a React componenet to handle the second stage of login. Now that we have a code we will combine this with our client secret to acquire an Authroization Token. This token will allow us to make calls to the Twitch API as the user. 
+So far, the user clicks a link which bounces them over to Twitch where they can login and tell Twitch they approve of our scopes. When the user approves/logs in, Twitch will redirect them to the redirect link we provided. This will bouce the user to our Twitch Auth URL were we can setup a React componenet to handle the second stage of login. Now that we have a code we will combine this with our client secret to acquire an Authroization Token. This token will allow us to make calls to the Twitch API as the user. 
 
 We are going to use [Axios](https://axios-http.com/) to make API calls. 
 
@@ -125,7 +125,7 @@ axios(axiosConfig)
 
  ~~~
 
-The token means the login is complete and allows the developer to make API calls on behalf of the user. It can be very user. 
+The token means the login is complete and allows the developer to make API calls on behalf of the user. 
 
 With this token you can make [all kinds](https://dev.twitch.tv/docs/api/reference) of API calls to Twitch. It's really cool stuff.
 
